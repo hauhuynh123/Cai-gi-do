@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hau Huynh - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Critical CSS inline để tránh FOUC */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: black;
+            font-size: 18px;
+            line-height: normal;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="screens-container" id="screensContainer">
+            <!-- Home screen - always visible -->
+            <div class="screen active" id="home-screen" data-screen-id="home">
+                <div class="screen-content">
+                    <div class="home-panel">
+                        <div class="name">hauhuynh</div>
+
+                        <div class="intro-section">
+                            <div class="description">
+                                <span class="link" onclick="openTab('projects-graphic')">graphic designer</span>
+                                <span>and</span>
+                                <span class="link" onclick="openTab('projects-product')">product designer</span>
+                                <span>based in</span>
+                                <span class="link" onclick="openTab('contact')">Ho Chi Minh city</span>
+                            </div>
+                            <div class="current-work">
+                                <span>Currently the graphic designer at</span>
+                                <span class="link" onclick="openTab('about')">rice</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-section">
+                            <span class="link" onclick="sendEmail()">email</span>
+                            <span>to inquire about freelance, collaborations, or just to say hi!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen image overlay -->
+    <div class="fullscreen-overlay" id="fullscreenOverlay">
+        <button class="fullscreen-close" onclick="closeFullscreen()">close</button>
+        <img class="fullscreen-image" id="fullscreenImage" src="" alt="">
+    </div>
+
+    <button class="gravity-reset" id="gravityReset" onclick="portfolio.resetGravity()">Close tab pls!!!!</button>
+    <div class="tab-warning" id="tabWarning">⚠️ Too many tabs! Gravity will activate soon...</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
